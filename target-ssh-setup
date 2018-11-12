@@ -1,0 +1,8 @@
+#! /bin/bash
+
+newuser = input("Input a name for the new user: ")
+sudo useradd $(newuser)
+sudo su - $(newuser)
+mkdir .ssh
+touch .ssh/authorized_keys
+cat ~/id_rsa.pub >> .ssh/authorized_keys 
